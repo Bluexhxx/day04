@@ -6,7 +6,9 @@
         {{ item }}
       </span>
     </p>
-    <p>你选中的元素累加的和为： {{ sumAll }}</p>
+    <ul>
+      <li v-for="(item, index) in newarr" :key="index">{{ item }}</li>
+    </ul>
   </div>
 </template>
 
@@ -14,14 +16,9 @@
 export default {
   data() {
     return {
-      arr: [9, 15, 19, 25, 29, 31, 48, 57, 62, 79, 87],
+      arr: ["科幻", "喜剧", "动漫", "冒险", "科技", "军事", "娱乐", "奇闻"],
       newarr: [],
     };
-  },
-  computed: {
-    sumAll(){
-      return this.newarr.reduce((total,curr) => total += curr,0)
-    }
   },
 };
 </script>
